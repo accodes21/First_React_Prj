@@ -1,4 +1,5 @@
 // import logo from './logo.svg';
+import React from 'react';
 import './App.css';
 import Main from "./components/Main"
 import Navbar from "./components/Navbar"
@@ -33,10 +34,14 @@ import Navbar from "./components/Navbar"
 // }
 
 function App(){
+  const [darkMode, setdarkMode] = React.useState(true);
+  function toggleDarkMode(){
+    setdarkMode(prevMode => !prevMode)
+  }
   return (
     <>
-    <Navbar/>
-    <Main/>
+    <Navbar darkMode={darkMode} toggleDarkMode={toggleDarkMode}/>
+    <Main darkMode={darkMode}/>
     </>
   );
 }
