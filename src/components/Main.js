@@ -1,10 +1,10 @@
 import React  from "react"
 
 
-function Main(){
+function Main(props){
     return (
         <>
-        <main className="container">
+        <main className={props.darkMode ? "dark" : ""}>
             <h1>Facts about React</h1>
             <ul>
                 <li>Was first released in 2013</li>
